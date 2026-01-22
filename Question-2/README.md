@@ -1,7 +1,7 @@
 # MLOps Assignment 1 - FashionMNIST ResNet Experiments
 
-**Name:** [Your Name]  
-**Roll Number:** [Your Roll Number]  
+**Name:** SHIVAM MADHAV KENCHE  
+**Roll Number:** M25CSA028
 **Course:** MLOps  
 **Assignment:** 1
 
@@ -182,3 +182,4 @@ jupyter notebook FashionMNIST_Experiments.ipynb
 **Status:** ✅ Complete
 
 **Note:** This project was completed as part of MLOps course Assignment 1. All experiments were run on Google Colab with GPU acceleration (NVIDIA Tesla T4).
+
