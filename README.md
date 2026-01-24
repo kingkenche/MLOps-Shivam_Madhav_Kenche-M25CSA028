@@ -8,6 +8,12 @@
 
 ## Q1(a): Deep Learning Classification
 
+### Best Models
+
+| Dataset | Configuration | Accuracy |
+|---------|---------------|:--------:|
+| MNIST | ResNet-18, BS=16, SGD, LR=0.001 | **99.81%** |
+| FashionMNIST | ResNet-18, BS=16, Adam, LR=0.0001 | **97.47%** |
 
 ### Hyperparameter Variations
 
