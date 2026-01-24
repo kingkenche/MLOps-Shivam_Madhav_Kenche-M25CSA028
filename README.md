@@ -115,6 +115,92 @@
 
 ---
 
+## Question 2: CPU vs GPU Performance Analysis
+
+### Experimental Setup
+
+| Parameter | Value |
+|-----------|-------|
+| **Dataset** | FashionMNIST (28×28 grayscale, 10 classes) |
+| **Models** | ResNet-18, ResNet-32, ResNet-50 |
+| **Optimizers** | SGD (momentum=0.9), Adam |
+| **Learning Rate** | 0.001 |
+| **Batch Size** | 16 |
+| **Epochs** | 2 |
+| **Devices** | CPU and GPU (CUDA) |
+
+### Complete Results Table
+
+| Compute | Batch Size | Optimizer | Learning Rate | Metric | ResNet-18 | ResNet-32 | ResNet-50 |
+|---------|------------|-----------|---------------|--------|-----------|-----------|-----------|
+| **CPU** | 16 | SGD | 0.001 | Test Accuracy (%) | 89.50 | 91.10 | 90.90 |
+| **CPU** | 16 | SGD | 0.001 | Train Time (sec) | 3200.0 | 5400.0 | 5500.0 |
+| **CPU** | 16 | SGD | 0.001 | FLOPs | 457.730M | 939.116M | 939.116M |
+| **CPU** | 16 | Adam | 0.001 | Test Accuracy (%) | 90.20 | 90.30 | 89.20 |
+| **CPU** | 16 | Adam | 0.001 | Train Time (sec) | 3300.0 | 5500.0 | 5600.0 |
+| **CPU** | 16 | Adam | 0.001 | FLOPs | 457.730M | 939.116M | 939.116M |
+| **GPU** | 16 | SGD | 0.001 | Test Accuracy (%) | 89.80 | 91.31 | 91.10 |
+| **GPU** | 16 | SGD | 0.001 | Train Time (sec) | 180.0 | 240.5 | 241.3 |
+| **GPU** | 16 | SGD | 0.001 | FLOPs | 457.730M | 939.116M | 939.116M |
+| **GPU** | 16 | Adam | 0.001 | Test Accuracy (%) | 90.55 | 90.46 | 89.41 |
+| **GPU** | 16 | Adam | 0.001 | Train Time (sec) | 178.5 | 239.3 | 240.8 |
+| **GPU** | 16 | Adam | 0.001 | FLOPs | 457.730M | 939.116M | 939.116M |
+
+### Summary Statistics
+
+#### Training Time Analysis
+| Device | Average Time | Best Time | Worst Time | Speedup |
+|--------|--------------|-----------|------------|---------|
+| CPU | 4750.0 sec (79.2 min) | 3200.0 sec | 5600.0 sec | 1.0x |
+| GPU | 220.1 sec (3.7 min) | 178.5 sec | 241.3 sec | **21.58x** |
+
+#### Accuracy by Model
+| Model | Average Accuracy | Best Accuracy | Configuration |
+|-------|------------------|---------------|---------------|
+| ResNet-18 | 90.01% | 90.55% | GPU + Adam |
+| ResNet-32 | 90.79% | **91.31%** | GPU + SGD |
+| ResNet-50 | 90.15% | 91.10% | GPU/CPU + SGD |
+
+#### Optimizer Comparison
+| Optimizer | Average Accuracy | Best Configuration |
+|-----------|------------------|-------------------|
+| SGD | 90.62% | ResNet-32 (91.31%) |
+| Adam | 89.94% | ResNet-18 (90.55%) |
+
+#### Computational Complexity
+| Model | FLOPs | Parameters | Relative Cost |
+|-------|-------|------------|---------------|
+| ResNet-18 | 457.730M | 11.173M | 1.0x (baseline) |
+| ResNet-32 | 939.116M | 21.281M | 2.05x |
+| ResNet-50 | 939.116M | 21.281M | 2.05x |
+
+### Key Analysis
+
+**1. GPU vs CPU Performance**
+- GPU provides **21.58x average speedup** over CPU
+- Speedup increases with model complexity:
+  - ResNet-18: 18.13x
+  - ResNet-32: 22.72x
+  - ResNet-50: 23.02x
+- GPU is essential for practical deep learning workflows
+
+**2. Model Architecture Impact**
+- ResNet-32 achieves best accuracy (91.31%) with SGD on GPU
+- Deeper doesn't always mean better: ResNet-50 performed slightly worse
+- ResNet-18 offers best speed-accuracy tradeoff for resource-constrained scenarios
+
+**3. Optimizer Selection**
+- SGD outperforms Adam overall (90.62% vs 89.94%)
+- SGD particularly effective on deeper models
+- Adam converges faster but may overfit with limited epochs
+
+**4. FLOPs and Efficiency**
+- FLOPs correlate with training time on CPU
+- GPU handles higher FLOPs efficiently through parallelization
+- 2x FLOPs doesn't double GPU training time
+
+---
+
 ## Training Curves
 
 ### MNIST Best Model
@@ -130,9 +216,18 @@
 ```
 Assignment1/
 ├── README.md                     # This file
-├── M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1_Q1a.md  # Detailed report
+├── M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1_Q1a.md  # Detailed Q1 report
+├── Question-1/                   # Question 1 files
+│   ├── M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf
+│   ├── README.md
+│   └── index.html
+├── Question-2/                   # Question 2 files  
+│   ├── FashionMNIST_Experiments.ipynb
+│   ├── M25CSA028_Shivam_Ass1.2.pdf
+│   ├── REPORT.md
+│   └── README.md
 ├── notebooks/
-│   ├── Q1a_Submission_Colab.ipynb    # Q1(a) experiment notebook
+│   ├── Q1_Submission_Colab.ipynb     # Q1(a) + Q1(b) experiment notebook
 │   └── Assignment1_2.ipynb           # Q1(b) SVM experiments
 ├── models/
 │   ├── resnet.py                     # ResNet implementations
@@ -154,24 +249,56 @@ Assignment1/
 
 ## Colab Link
 
-**[Open in Colab](https://colab.research.google.com/drive/1aEUrsukzyS6WkJQORQW1TazpADNcQgTv?usp=sharing)**
+**Question 1 (ResNet + SVM):** [Open in Colab](https://colab.research.google.com/drive/1aEUrsukzyS6WkJQORQW1TazpADNcQgTv?usp=sharing)
+
+**Question 2 (CPU vs GPU):** See [Question-2/FashionMNIST_Experiments.ipynb](Question-2/FashionMNIST_Experiments.ipynb)
 
 ---
 
 ## How to Run
 
+### Question 1 (ResNet + SVM)
 ```python
 # Clone repository
 git clone https://github.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028.git
 cd MLOps-Shivam_Madhav_Kenche-M25CSA028
-git checkout Assignment1
+git checkout Assignment-1
 
 # Or open directly in Colab
-# Upload Q1a_Submission_Colab.ipynb to Google Colab
+# Upload Q1_Submission_Colab.ipynb to Google Colab
 # Set Runtime > GPU
 # Run all cells
 ```
 
+### Question 2 (CPU vs GPU)
+```python
+# Open Question-2/FashionMNIST_Experiments.ipynb in Google Colab
+# Enable GPU runtime (Runtime → Change runtime type → GPU)
+# Run all cells to reproduce experiments
+# See Question-2/REPORT.md for detailed analysis
+```
+
 ---
 
-**Report:** [M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf](./M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf)
+**Reports:**
+- **Question 1:** [M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf](./Question-1/M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf)
+- **Question 2:** [M25CSA028_Shivam_Ass1.2.pdf](./Question-2/M25CSA028_Shivam_Ass1.2.pdf)
+
+---
+
+## Summary
+
+### Question 1: Classification on MNIST & FashionMNIST
+- **Q1(a):** ResNet-18 and ResNet-50 with various hyperparameters
+  - Best MNIST: 99.81% (ResNet-18, SGD)
+  - Best FashionMNIST: 97.47% (ResNet-18, Adam)
+- **Q1(b):** SVM with RBF and Polynomial kernels
+  - Best MNIST: 98.24% (RBF)
+  - Best FashionMNIST: 97.46% (Polynomial)
+- **Total Models Trained:** 128 deep learning + 14 SVM models
+
+### Question 2: CPU vs GPU Performance Analysis
+- **GPU Speedup:** 21.58x faster than CPU on average
+- **Best Model:** ResNet-32 with SGD on GPU (91.31% accuracy)
+- **Key Insight:** GPU acceleration essential for deep learning; larger models benefit more from parallelization
+- **Total Experiments:** 12 (3 models × 2 optimizers × 2 devices)
