@@ -8,38 +8,6 @@
 
 ## Q1(a): Deep Learning Classification
 
-### MNIST - Test Classification Accuracy (%)
-
-| Batch Size | Optimizer | Learning Rate | ResNet-18 | ResNet-50 |
-|:----------:|:---------:|:-------------:|:---------:|:---------:|
-| 16 | SGD | 0.001 | **99.81** | **99.79** |
-| 16 | SGD | 0.0001 | 99.75 | 99.35 |
-| 16 | Adam | 0.001 | 99.23 | 96.78 |
-| 16 | Adam | 0.0001 | 99.57 | 97.83 |
-| 32 | SGD | 0.001 | 99.81 | 98.82 |
-| 32 | SGD | 0.0001 | 99.65 | 99.01 |
-| 32 | Adam | 0.001 | 99.39 | 99.09 |
-| 32 | Adam | 0.0001 | 99.64 | 99.42 |
-
-### FashionMNIST - Test Classification Accuracy (%)
-
-| Batch Size | Optimizer | Learning Rate | ResNet-18 | ResNet-50 |
-|:----------:|:---------:|:-------------:|:---------:|:---------:|
-| 16 | SGD | 0.001 | 96.59 | 96.56 |
-| 16 | SGD | 0.0001 | 94.41 | 95.46 |
-| 16 | Adam | 0.001 | 93.34 | 91.48 |
-| 16 | Adam | 0.0001 | **97.47** | 96.40 |
-| 32 | SGD | 0.001 | 95.64 | **97.20** |
-| 32 | SGD | 0.0001 | 96.26 | 96.44 |
-| 32 | Adam | 0.001 | 93.84 | 91.51 |
-| 32 | Adam | 0.0001 | 97.28 | 96.09 |
-
-### Best Models
-
-| Dataset | Configuration | Accuracy |
-|---------|---------------|:--------:|
-| MNIST | ResNet-18, BS=16, SGD, LR=0.001 | **99.81%** |
-| FashionMNIST | ResNet-18, BS=16, Adam, LR=0.0001 | **97.47%** |
 
 ### Hyperparameter Variations
 
