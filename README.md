@@ -219,6 +219,8 @@ Assignment1/
 ├── M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1_Q1a.md  # Detailed Q1 report
 ├── Question-1/                   # Question 1 files
 │   ├── M25CSA028_SHIVAM_MADHAV_KENCHE_Ass1.pdf
+│   ├── Q1_Submission_Colab.ipynb     # Q1(a) + Q1(b) experiment notebook
+│   ├── Assignment1_2.ipynb           # Q1(b) SVM experiments
 │   ├── README.md
 │   └── index.html
 ├── Question-2/                   # Question 2 files  
@@ -226,9 +228,6 @@ Assignment1/
 │   ├── M25CSA028_Shivam_Ass1.2.pdf
 │   ├── REPORT.md
 │   └── README.md
-├── notebooks/
-│   ├── Q1_Submission_Colab.ipynb     # Q1(a) + Q1(b) experiment notebook
-│   └── Assignment1_2.ipynb           # Q1(b) SVM experiments
 ├── models/
 │   ├── resnet.py                     # ResNet implementations
 │   └── svm_classifier.py             # SVM classifier with reproducibility
