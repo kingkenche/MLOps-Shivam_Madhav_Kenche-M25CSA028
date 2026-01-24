@@ -58,27 +58,26 @@
 </head>
 <body>
     <div class="header">
-        <h1>MLOps Assignments</h1>
-        <p><strong>SHIVAM MADHAV KENCHE</strong> | M25CSA028</p>
+        <h1>MLOps Assignment 1</h1>
+        <p><b>Student:</b> SHIVAM MADHAV KENCHE<br>
+        <b>Roll Number:</b> M25CSA028<br>
+        <b>Branch:</b> Assignment1</p>
+        <div class="links">
+            <a class="link-btn" href="#assignment1">Assignment 1</a>
+            <a class="link-btn" href="#assignment2">Assignment 2</a>
+            <!-- Add more assignments as needed -->
+        </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="assignment1">
         <h2>Assignment 1: Classification on MNIST & FashionMNIST</h2>
-        
         <div class="links">
             <a href="https://colab.research.google.com/drive/1aEUrsukzyS6WkJQORQW1TazpADNcQgTv?usp=sharing" class="link-btn">📓 Open in Colab</a>
             <a href="https://github.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/tree/Assignment-1" class="link-btn">💻 GitHub Branch</a>
         </div>
-
         <h3>Q1(a): MNIST Results</h3>
         <table>
-            <tr>
-                <th>Batch Size</th>
-                <th>Optimizer</th>
-                <th>Learning Rate</th>
-                <th>ResNet-18</th>
-                <th>ResNet-50</th>
-            </tr>
+            <tr><th>Batch Size</th><th>Optimizer</th><th>Learning Rate</th><th>ResNet-18</th><th>ResNet-50</th></tr>
             <tr><td>16</td><td>SGD</td><td>0.001</td><td class="best">99.81%</td><td class="best">99.79%</td></tr>
             <tr><td>16</td><td>SGD</td><td>0.0001</td><td>99.75%</td><td>99.35%</td></tr>
             <tr><td>16</td><td>Adam</td><td>0.001</td><td>99.23%</td><td>96.78%</td></tr>
@@ -88,16 +87,9 @@
             <tr><td>32</td><td>Adam</td><td>0.001</td><td>99.39%</td><td>99.09%</td></tr>
             <tr><td>32</td><td>Adam</td><td>0.0001</td><td>99.64%</td><td>99.42%</td></tr>
         </table>
-
         <h3>Q1(a): FashionMNIST Results</h3>
         <table>
-            <tr>
-                <th>Batch Size</th>
-                <th>Optimizer</th>
-                <th>Learning Rate</th>
-                <th>ResNet-18</th>
-                <th>ResNet-50</th>
-            </tr>
+            <tr><th>Batch Size</th><th>Optimizer</th><th>Learning Rate</th><th>ResNet-18</th><th>ResNet-50</th></tr>
             <tr><td>16</td><td>SGD</td><td>0.001</td><td>96.59%</td><td>96.56%</td></tr>
             <tr><td>16</td><td>SGD</td><td>0.0001</td><td>94.41%</td><td>95.46%</td></tr>
             <tr><td>16</td><td>Adam</td><td>0.001</td><td>93.34%</td><td>91.48%</td></tr>
@@ -107,58 +99,39 @@
             <tr><td>32</td><td>Adam</td><td>0.001</td><td>93.84%</td><td>91.51%</td></tr>
             <tr><td>32</td><td>Adam</td><td>0.0001</td><td>97.28%</td><td>96.09%</td></tr>
         </table>
-
         <h3>Best Models - Q1(a) Deep Learning</h3>
         <table>
             <tr><th>Dataset</th><th>Configuration</th><th>Accuracy</th></tr>
             <tr class="best"><td>MNIST</td><td>ResNet-18, BS=16, SGD, LR=0.001</td><td>99.81%</td></tr>
             <tr class="best"><td>FashionMNIST</td><td>ResNet-18, BS=16, Adam, LR=0.0001</td><td>97.47%</td></tr>
         </table>
-
         <h3>Q1(b): SVM Results - MNIST</h3>
         <table>
-            <tr>
-                <th>Kernel</th>
-                <th>C</th>
-                <th>Gamma</th>
-                <th>Degree</th>
-                <th>Test Accuracy</th>
-            </tr>
+            <tr><th>Kernel</th><th>C</th><th>Gamma</th><th>Degree</th><th>Test Accuracy</th></tr>
             <tr class="best"><td>RBF</td><td>10.0</td><td>scale</td><td>-</td><td>98.24%</td></tr>
             <tr><td>RBF</td><td>1.0</td><td>scale</td><td>-</td><td>97.84%</td></tr>
             <tr><td>Poly</td><td>10.0</td><td>scale</td><td>2</td><td>97.95%</td></tr>
             <tr><td>Poly</td><td>1.0</td><td>scale</td><td>2</td><td>97.49%</td></tr>
         </table>
-
         <h3>Q1(b): SVM Results - FashionMNIST</h3>
         <table>
-            <tr>
-                <th>Kernel</th>
-                <th>C</th>
-                <th>Gamma</th>
-                <th>Degree</th>
-                <th>Test Accuracy</th>
-            </tr>
+            <tr><th>Kernel</th><th>C</th><th>Gamma</th><th>Degree</th><th>Test Accuracy</th></tr>
             <tr class="best"><td>Poly</td><td>1.0</td><td>scale</td><td>3</td><td>97.46%</td></tr>
             <tr><td>Poly</td><td>1.0</td><td>scale</td><td>2</td><td>96.49%</td></tr>
             <tr><td>RBF</td><td>0.1</td><td>scale</td><td>-</td><td>94.53%</td></tr>
             <tr><td>RBF</td><td>10.0</td><td>scale</td><td>-</td><td>90.19%</td></tr>
         </table>
-
         <h3>SVM vs Deep Learning Comparison</h3>
         <table>
             <tr><th>Dataset</th><th>Best SVM</th><th>Best ResNet</th><th>Difference</th></tr>
             <tr><td>MNIST</td><td>98.24%</td><td>99.81%</td><td>-1.57%</td></tr>
             <tr class="best"><td>FashionMNIST</td><td>97.46%</td><td>97.47%</td><td>-0.01%</td></tr>
         </table>
-
         <h3>Training Curves</h3>
         <p><strong>MNIST Best Model:</strong></p>
-        <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/mnist_training_curves.png" alt="MNIST Training Curves">
-        
+        <img src="results/mnist_training_curves.png" alt="MNIST Training Curves">
         <p><strong>FashionMNIST Best Model:</strong></p>
-        <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/fashion_training_curves.png" alt="FashionMNIST Training Curves">
-
+        <img src="results/fashion_training_curves.png" alt="FashionMNIST Training Curves">
         <h3>Key Findings</h3>
         <ul>
             <li>✅ All models (ResNet & SVM) achieve >80% accuracy</li>
@@ -169,6 +142,12 @@
             <li><strong>Performance:</strong> Polynomial kernels offer 2-5× faster inference than RBF</li>
             <li><strong>Reproducibility:</strong> All models saved as .pth files</li>
         </ul>
+    </div>
+
+    <!-- Assignment 2 and future assignments navigation placeholder -->
+    <div class="card" id="assignment2">
+        <h2>Assignment 2 (Coming Soon)</h2>
+        <p>Navigation and summary for Assignment 2 will appear here.</p>
     </div>
 
     <footer style="text-align: center; color: #666; padding: 20px;">
