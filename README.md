@@ -54,6 +54,163 @@
 
 ---
 
+### Complete Results - All 128 Experiments
+
+<details>
+<summary><b>Click to expand full results table</b></summary>
+
+#### pin_memory=False, epochs=10 (Best Configuration)
+
+| Dataset | Model | Batch Size | Optimizer | Learning Rate | Test Accuracy (%) |
+|:-------:|:-----:|:----------:|:---------:|:-------------:|:-----------------:|
+| MNIST | ResNet-18 | 16 | SGD | 0.001 | **99.81** |
+| MNIST | ResNet-18 | 16 | SGD | 0.0001 | 99.75 |
+| MNIST | ResNet-18 | 16 | Adam | 0.001 | 99.23 |
+| MNIST | ResNet-18 | 16 | Adam | 0.0001 | 99.57 |
+| MNIST | ResNet-18 | 32 | SGD | 0.001 | 99.81 |
+| MNIST | ResNet-18 | 32 | SGD | 0.0001 | 99.65 |
+| MNIST | ResNet-18 | 32 | Adam | 0.001 | 99.39 |
+| MNIST | ResNet-18 | 32 | Adam | 0.0001 | 99.64 |
+| MNIST | ResNet-50 | 16 | SGD | 0.001 | 99.79 |
+| MNIST | ResNet-50 | 16 | SGD | 0.0001 | 99.35 |
+| MNIST | ResNet-50 | 16 | Adam | 0.001 | 96.78 |
+| MNIST | ResNet-50 | 16 | Adam | 0.0001 | 97.83 |
+| MNIST | ResNet-50 | 32 | SGD | 0.001 | 98.82 |
+| MNIST | ResNet-50 | 32 | SGD | 0.0001 | 99.01 |
+| MNIST | ResNet-50 | 32 | Adam | 0.001 | 99.09 |
+| MNIST | ResNet-50 | 32 | Adam | 0.0001 | 99.42 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.001 | 96.59 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.0001 | 94.41 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.001 | 93.34 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.0001 | **97.47** |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.001 | 95.64 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.0001 | 96.26 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.001 | 93.84 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.0001 | 97.28 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.001 | 96.56 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.0001 | 95.46 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.001 | 91.48 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.0001 | 96.40 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.001 | 97.20 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.0001 | 96.44 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.001 | 91.51 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.0001 | 96.09 |
+
+#### pin_memory=False, epochs=2
+
+| Dataset | Model | Batch Size | Optimizer | Learning Rate | Test Accuracy (%) |
+|:-------:|:-----:|:----------:|:---------:|:-------------:|:-----------------:|
+| MNIST | ResNet-18 | 16 | SGD | 0.001 | 99.29 |
+| MNIST | ResNet-18 | 16 | SGD | 0.0001 | 98.46 |
+| MNIST | ResNet-18 | 16 | Adam | 0.001 | 98.06 |
+| MNIST | ResNet-18 | 16 | Adam | 0.0001 | 98.82 |
+| MNIST | ResNet-18 | 32 | SGD | 0.001 | 98.99 |
+| MNIST | ResNet-18 | 32 | SGD | 0.0001 | 97.96 |
+| MNIST | ResNet-18 | 32 | Adam | 0.001 | 97.32 |
+| MNIST | ResNet-18 | 32 | Adam | 0.0001 | 98.64 |
+| MNIST | ResNet-50 | 16 | SGD | 0.001 | 98.70 |
+| MNIST | ResNet-50 | 16 | SGD | 0.0001 | 98.29 |
+| MNIST | ResNet-50 | 16 | Adam | 0.001 | 96.43 |
+| MNIST | ResNet-50 | 16 | Adam | 0.0001 | 98.54 |
+| MNIST | ResNet-50 | 32 | SGD | 0.001 | 98.51 |
+| MNIST | ResNet-50 | 32 | SGD | 0.0001 | 97.64 |
+| MNIST | ResNet-50 | 32 | Adam | 0.001 | 96.44 |
+| MNIST | ResNet-50 | 32 | Adam | 0.0001 | 97.64 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.001 | 90.96 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.0001 | 89.20 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.001 | 86.19 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.0001 | 91.05 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.001 | 90.68 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.0001 | 87.89 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.001 | 88.51 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.0001 | 91.37 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.001 | 90.77 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.0001 | 87.73 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.001 | 87.78 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.0001 | 89.90 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.001 | 90.97 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.0001 | 85.25 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.001 | 88.32 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.0001 | 90.03 |
+
+#### pin_memory=True, epochs=2
+
+| Dataset | Model | Batch Size | Optimizer | Learning Rate | Test Accuracy (%) |
+|:-------:|:-----:|:----------:|:---------:|:-------------:|:-----------------:|
+| MNIST | ResNet-18 | 16 | SGD | 0.001 | 99.13 |
+| MNIST | ResNet-18 | 16 | SGD | 0.0001 | 98.50 |
+| MNIST | ResNet-18 | 16 | Adam | 0.001 | 97.64 |
+| MNIST | ResNet-18 | 16 | Adam | 0.0001 | 98.07 |
+| MNIST | ResNet-18 | 32 | SGD | 0.001 | 99.02 |
+| MNIST | ResNet-18 | 32 | SGD | 0.0001 | 98.09 |
+| MNIST | ResNet-18 | 32 | Adam | 0.001 | 97.32 |
+| MNIST | ResNet-18 | 32 | Adam | 0.0001 | 98.71 |
+| MNIST | ResNet-50 | 16 | SGD | 0.001 | 98.68 |
+| MNIST | ResNet-50 | 16 | SGD | 0.0001 | 98.41 |
+| MNIST | ResNet-50 | 16 | Adam | 0.001 | 97.81 |
+| MNIST | ResNet-50 | 16 | Adam | 0.0001 | 97.56 |
+| MNIST | ResNet-50 | 32 | SGD | 0.001 | 98.91 |
+| MNIST | ResNet-50 | 32 | SGD | 0.0001 | 97.19 |
+| MNIST | ResNet-50 | 32 | Adam | 0.001 | 94.99 |
+| MNIST | ResNet-50 | 32 | Adam | 0.0001 | 98.38 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.001 | 90.41 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.0001 | 87.18 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.001 | 89.02 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.0001 | 90.49 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.001 | 91.26 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.0001 | 88.06 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.001 | 89.51 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.0001 | 91.38 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.001 | 90.95 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.0001 | 88.12 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.001 | 83.14 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.0001 | 86.75 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.001 | 90.14 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.0001 | 78.61 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.001 | 81.93 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.0001 | 88.14 |
+
+#### pin_memory=True, epochs=5
+
+| Dataset | Model | Batch Size | Optimizer | Learning Rate | Test Accuracy (%) |
+|:-------:|:-----:|:----------:|:---------:|:-------------:|:-----------------:|
+| MNIST | ResNet-18 | 16 | SGD | 0.001 | 99.22 |
+| MNIST | ResNet-18 | 16 | SGD | 0.0001 | 99.00 |
+| MNIST | ResNet-18 | 16 | Adam | 0.001 | 98.56 |
+| MNIST | ResNet-18 | 16 | Adam | 0.0001 | 99.20 |
+| MNIST | ResNet-18 | 32 | SGD | 0.001 | 99.17 |
+| MNIST | ResNet-18 | 32 | SGD | 0.0001 | 98.82 |
+| MNIST | ResNet-18 | 32 | Adam | 0.001 | 98.51 |
+| MNIST | ResNet-18 | 32 | Adam | 0.0001 | 99.15 |
+| MNIST | ResNet-50 | 16 | SGD | 0.001 | 99.17 |
+| MNIST | ResNet-50 | 16 | SGD | 0.0001 | 98.90 |
+| MNIST | ResNet-50 | 16 | Adam | 0.001 | 98.44 |
+| MNIST | ResNet-50 | 16 | Adam | 0.0001 | 98.74 |
+| MNIST | ResNet-50 | 32 | SGD | 0.001 | 99.18 |
+| MNIST | ResNet-50 | 32 | SGD | 0.0001 | 98.61 |
+| MNIST | ResNet-50 | 32 | Adam | 0.001 | 97.06 |
+| MNIST | ResNet-50 | 32 | Adam | 0.0001 | 98.62 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.001 | 92.66 |
+| FashionMNIST | ResNet-18 | 16 | SGD | 0.0001 | 89.59 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.001 | 91.18 |
+| FashionMNIST | ResNet-18 | 16 | Adam | 0.0001 | 92.69 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.001 | 91.85 |
+| FashionMNIST | ResNet-18 | 32 | SGD | 0.0001 | 90.54 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.001 | 91.24 |
+| FashionMNIST | ResNet-18 | 32 | Adam | 0.0001 | 92.29 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.001 | 92.70 |
+| FashionMNIST | ResNet-50 | 16 | SGD | 0.0001 | 90.30 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.001 | 90.48 |
+| FashionMNIST | ResNet-50 | 16 | Adam | 0.0001 | 91.34 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.001 | 91.06 |
+| FashionMNIST | ResNet-50 | 32 | SGD | 0.0001 | 88.40 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.001 | 89.59 |
+| FashionMNIST | ResNet-50 | 32 | Adam | 0.0001 | 91.33 |
+
+</details>
+
+---
+
 ## Q1(b): SVM Classification
 
 ### MNIST - SVM Results
