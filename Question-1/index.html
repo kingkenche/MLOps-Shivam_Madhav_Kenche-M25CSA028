@@ -122,6 +122,31 @@
         <p><strong>FashionMNIST Best Model:</strong></p>
         <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/fashion_training_curves.png" alt="FashionMNIST Training Curves">
 
+        <h3>Confusion Matrix Analysis</h3>
+        <p><strong>MNIST Confusion Matrix</strong> (ResNet-18, BS=16, SGD, LR=0.001 - 99.81% accuracy):</p>
+        <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/mnist_confusion_matrix.png" alt="MNIST Confusion Matrix">
+        
+        <p><strong>FashionMNIST Confusion Matrix</strong> (ResNet-18, BS=16, Adam, LR=0.0001 - 97.47% accuracy):</p>
+        <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/fashionmnist_confusion_matrix.png" alt="FashionMNIST Confusion Matrix">
+        
+        <p><strong>Side-by-Side Comparison:</strong></p>
+        <img src="https://raw.githubusercontent.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/Assignment-1/results/confusion_matrices_comparison.png" alt="Confusion Matrices Comparison">
+
+        <h4>FashionMNIST Per-Class Accuracy Insights</h4>
+        <table>
+            <tr><th>Class</th><th>Accuracy</th><th>Notes</th></tr>
+            <tr><td>Sandal</td><td class="best">99.93%</td><td>Best - Distinct shape</td></tr>
+            <tr><td>Bag</td><td class="best">99.72%</td><td>Excellent</td></tr>
+            <tr><td>Sneaker</td><td class="best">99.50%</td><td>Excellent</td></tr>
+            <tr><td>Trouser</td><td>99.12%</td><td>Very good</td></tr>
+            <tr><td>Ankle boot</td><td>98.53%</td><td>Very good</td></tr>
+            <tr><td>Dress</td><td>98.57%</td><td>Very good</td></tr>
+            <tr><td>Pullover</td><td>96.78%</td><td>Good</td></tr>
+            <tr><td>Coat</td><td>95.65%</td><td>Confused with Pullover</td></tr>
+            <tr><td>T-shirt/top</td><td>93.75%</td><td>Confused with Shirt</td></tr>
+            <tr><td>Shirt</td><td>93.25%</td><td>Most challenging</td></tr>
+        </table>
+
         <h3>Key Findings</h3>
         <ul>
             <li>✅ All models achieve >80% accuracy</li>

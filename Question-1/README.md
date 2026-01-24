@@ -118,10 +118,76 @@
 ## Training Curves
 
 ### MNIST Best Model
-![MNIST Training Curves](results/mnist_training_curves.png)
+![MNIST Training Curves](../results/mnist_training_curves.png)
 
 ### FashionMNIST Best Model
-![FashionMNIST Training Curves](results/fashion_training_curves.png)
+![FashionMNIST Training Curves](../results/fashion_training_curves.png)
+
+---
+
+## Confusion Matrix Analysis
+
+### MNIST - Best Model Confusion Matrix
+**Model:** ResNet-18, Batch Size=16, SGD, LR=0.001 (99.81% accuracy)
+
+![MNIST Confusion Matrix](../results/mnist_confusion_matrix.png)
+
+#### MNIST Classification Report
+
+| Class | Precision | Recall | F1-Score | Support |
+|:-----:|:---------:|:------:|:--------:|:-------:|
+| 0 | 1.00 | 1.00 | 1.00 | 1,409 |
+| 1 | 0.99 | 1.00 | 1.00 | 1,492 |
+| 2 | 1.00 | 1.00 | 1.00 | 1,433 |
+| 3 | 1.00 | 1.00 | 1.00 | 1,420 |
+| 4 | 1.00 | 1.00 | 1.00 | 1,412 |
+| 5 | 1.00 | 1.00 | 1.00 | 1,204 |
+| 6 | 1.00 | 1.00 | 1.00 | 1,328 |
+| 7 | 1.00 | 1.00 | 1.00 | 1,508 |
+| 8 | 1.00 | 1.00 | 1.00 | 1,347 |
+| 9 | 1.00 | 1.00 | 1.00 | 1,447 |
+| **Overall** | **1.00** | **1.00** | **1.00** | **14,000** |
+
+#### MNIST Per-Class Accuracy
+- 0: 99.93% | 1: 99.93% | 2: 99.86% | 3: 99.86% | 4: 99.93%
+- 5: 99.92% | 6: 99.92% | 7: 99.93% | 8: 99.93% | 9: 99.93%
+
+---
+
+### FashionMNIST - Best Model Confusion Matrix
+**Model:** ResNet-18, Batch Size=16, Adam, LR=0.0001 (97.47% accuracy)
+
+![FashionMNIST Confusion Matrix](../results/fashionmnist_confusion_matrix.png)
+
+#### FashionMNIST Classification Report
+
+| Class | Precision | Recall | F1-Score | Support |
+|:-----:|:---------:|:------:|:--------:|:-------:|
+| T-shirt/top | 0.96 | 0.94 | 0.95 | 1,408 |
+| Trouser | 1.00 | 0.99 | 1.00 | 1,371 |
+| Pullover | 0.95 | 0.97 | 0.96 | 1,430 |
+| Dress | 0.96 | 0.99 | 0.97 | 1,402 |
+| Coat | 0.98 | 0.96 | 0.97 | 1,403 |
+| Sandal | 1.00 | 1.00 | 1.00 | 1,368 |
+| Shirt | 0.92 | 0.93 | 0.93 | 1,348 |
+| Sneaker | 0.98 | 1.00 | 0.99 | 1,408 |
+| Bag | 1.00 | 1.00 | 1.00 | 1,430 |
+| Ankle boot | 1.00 | 0.99 | 0.99 | 1,432 |
+| **Overall** | **0.97** | **0.97** | **0.97** | **14,000** |
+
+#### FashionMNIST Per-Class Accuracy
+- T-shirt/top: 93.75% | Trouser: 99.12% | Pullover: 96.78% | Dress: 98.57% | Coat: 95.65%
+- Sandal: 99.93% | Shirt: 93.25% | Sneaker: 99.50% | Bag: 99.72% | Ankle boot: 98.53%
+
+**Key Observations:**
+- **Most Challenging Classes:** Shirt (93.25%) and T-shirt/top (93.75%) - similar visual features cause confusion
+- **Best Performing Classes:** Sandal (99.93%), Bag (99.72%), Sneaker (99.50%) - distinct shapes are easier to classify
+- **Class Confusion:** Shirt ↔ T-shirt/top and Pullover ↔ Coat show highest confusion rates
+
+---
+
+### Side-by-Side Comparison
+![Confusion Matrices Comparison](../results/confusion_matrices_comparison.png)
 
 ---
 
@@ -149,7 +215,10 @@ Parent Directory:
     ├── fashionmnist_svm_poly_C1.0_gammascale_deg3_best.pth  # Best FashionMNIST SVM
     ├── mnist_training_curves.png     # MNIST training curves
     ├── fashion_training_curves.png   # FashionMNIST training curves
-    └── combined_training_curves.png  # Combined comparison
+    ├── combined_training_curves.png  # Combined comparison
+    ├── mnist_confusion_matrix.png    # MNIST confusion matrix
+    ├── fashionmnist_confusion_matrix.png  # FashionMNIST confusion matrix
+    └── confusion_matrices_comparison.png  # Side-by-side comparison
 ```
 
 ---
