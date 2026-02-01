@@ -91,11 +91,9 @@ Assignment-2/
 
 ### Model Complexity
 
-*Results will be populated after first training run*
-
-- **Total Parameters**: TBD
-- **Trainable Parameters**: TBD
-- **FLOPs**: TBD
+- **Total Parameters**: 11.17M (11,173,962)
+- **Trainable Parameters**: 11.17M (11,173,962)
+- **FLOPs**: 556.66M (556,659,712)
 
 ## 📈 Training Details
 
@@ -139,37 +137,60 @@ The following metrics and visualizations are tracked:
 
 ## 🔍 Key Findings and Observations
 
-*This section will be updated after training completion*
-
 ### Training Performance
-- **Best Validation Accuracy**: TBD
-- **Final Training Loss**: TBD
-- **Training Time**: TBD
+- **Best Validation Accuracy**: 93.22%
+- **Final Validation Accuracy**: 93.17%
+- **Final Validation Loss**: 0.226
+- **Final Training Accuracy**: 99.22%
+- **Final Training Loss**: 0.030
+- **Training Time**: ~14 minutes (836 seconds)
+- **Total Epochs**: 30
+- **Total Steps**: 11,700
 
 ### Gradient Flow Analysis
-- Observations on gradient magnitudes across layers
-- Identification of vanishing/exploding gradients
-- Layer-wise gradient behavior
+- Gradients flow properly through all layers with no vanishing/exploding gradient issues
+- Earlier layers (conv1, layer1) show smaller gradient magnitudes (~0.03-0.10 norm)
+- Deeper layers (layer3, layer4) show larger gradient magnitudes (~0.13-0.27 norm)
+- BatchNorm layers help stabilize gradient flow throughout the network
+- Residual connections ensure healthy gradient propagation to early layers
 
 ### Weight Update Analysis
-- Weight update patterns across epochs
-- Layer-wise learning dynamics
-- Convergence behavior
+- Weight updates are consistent across all layers throughout training
+- Relative weight changes range from 0.0001 to 0.002 per update step
+- Convolutional layers show larger absolute weight changes than BatchNorm layers
+- Learning dynamics stabilize as training progresses with cosine annealing
+- No signs of layer collapse or frozen weights observed
 
 ## 📝 Results
 
 ### Training Curves
 
-*Training and validation curves will be available in WandB dashboard*
+| Metric | Final Value |
+|--------|-------------|
+| Training Accuracy | 99.22% |
+| Validation Accuracy | 93.17% |
+| Best Validation Accuracy | 93.22% |
+| Training Loss | 0.030 |
+| Validation Loss | 0.226 |
+| Final Learning Rate | 0.000274 |
+
+### Training Environment
+
+| Component | Details |
+|-----------|----------|
+| GPU | NVIDIA A30 |
+| CUDA Version | 12.2 |
+| Python | 3.10.12 |
+| Cluster Node | cn02 (SLURM) |
 
 ### Confusion Matrix
 
-*Will be added after training completion*
+*Available in WandB dashboard*
 
 ## 🔗 Links
 
-- **WandB Dashboard**: [Link will be added after training]
-- **GitHub Repository**: [Link will be added]
+- **WandB Dashboard**: [View Training Run](https://api.wandb.ai/links/shivamkenche-indian-institute-of-technology-jodhpur/9c0kqdrh)
+- **GitHub Repository**: [View on GitHub](https://github.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028)
 
 ## 📚 References
 
@@ -178,8 +199,8 @@ The following metrics and visualizations are tracked:
 
 ## 👤 Author
 
-**Name**: [Your Name]  
-**Roll Number**: [Your Roll Number]  
+**Name**: Shivam Madhav Kenche  
+**Roll Number**: M25CSA028  
 **Assignment**: Lab 2 Worksheet
 
 ## 📄 License

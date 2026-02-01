@@ -8,9 +8,9 @@ from tqdm import tqdm
 import wandb
 import os
 
-from dataloader import get_dataloaders
-from model import get_model
-from utils import (
+from .dataloader import get_dataloaders
+from .model import get_model
+from .utils import (
     GradientFlowTracker, 
     WeightUpdateTracker, 
     calculate_accuracy,
