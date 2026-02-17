@@ -1,0 +1,28 @@
+# ── Dockerfile.eval ────────────────────────────────────────────────────────────
+# Production Docker image for evaluation only (Task 9)
+# Pulls the fine-tuned model from HuggingFace Hub on startup.
+# ───────────────────────────────────────────────────────────────────────────────
+
+FROM python:3.10-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements and install
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source code
+COPY src/ ./src/
+COPY eval_only.py .
+
+# Environment variable for the HuggingFace model repo
+ENV HF_REPO_ID="kingkenche/distilbert-goodreads-genre-classifier"
+
+# Run evaluation on startup
+CMD ["python", "eval_only.py"]

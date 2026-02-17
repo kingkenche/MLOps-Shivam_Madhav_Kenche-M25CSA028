@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Training artifacts
+results/
+logs/
+distilbert-reviews-genres/
+results_hub/
+results_eval/
+
+# Data cache
+*.pickle
+genre_reviews_dict.pickle
+
+# Temporary files
+notebook_content.txt
+extract_notebook.py
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
