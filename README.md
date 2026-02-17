@@ -61,31 +61,56 @@ Assignment-3/
 
 ## Evaluation Results
 
-### Local Model Evaluation
+### Local Model Evaluation (Colab Run)
 
 | Metric | Score |
 |--------|-------|
-| Accuracy | *Run `main.py` to populate* |
-| Precision (weighted) | — |
-| Recall (weighted) | — |
-| F1 (weighted) | — |
-| Loss | — |
+| Accuracy | **60.63%** |
+| Precision (weighted) | 61.16% |
+| Recall (weighted) | 60.63% |
+| F1 (weighted) | 60.70% |
+| Loss | 1.259 |
 
-### HuggingFace Hub Model Evaluation
+> *Note*: Results vary due to random sampling of Reviews from the sourceURL. The Colab run used a different random subset than the local verification.
+
+### Docker Container Evaluation
 
 | Metric | Score |
 |--------|-------|
-| Accuracy | *Run `evaluate_from_hub.py` to populate* |
-| Precision (weighted) | — |
-| Recall (weighted) | — |
-| F1 (weighted) | — |
-| Loss | — |
+| Accuracy | **60.75%** |
+| Precision (weighted) | 61.29% |
+| Recall (weighted) | 60.75% |
+| F1 (weighted) | 60.83% |
+| Loss | 1.259 |
 
-> Results are saved in `results/eval_results.json` and `results/eval_results_hub.json` respectively.
+> Results are saved in `results/eval_results_docker.json` inside the container.
+
+## HuggingFace Hub Model Evaluation (Local Verification)
+
+| Metric | Score |
+|--------|-------|
+| Accuracy | **70.88%** |
+| Precision (weighted) | 70.88% |
+| Recall (weighted) | 70.88% |
+| F1 (weighted) | 70.78% |
+| Loss | 0.918 |
+
+> *Note*: Results vary due to random sampling of the dataset. The Docker run (60.75%) aligns closely with the Colab training (60.6%).
 
 ## HuggingFace Model Link
 
 🤗 **Model**: [kingkenche/distilbert-goodreads-genre-classifier](https://huggingface.co/kingkenche/distilbert-goodreads-genre-classifier)
+
+## GitHub Repository
+
+📂 **Repository**: [MLOps-Shivam_Madhav_Kenche-M25CSA028 (Branch: assignment-3)](https://github.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028/tree/assignment-3)
+
+To explore the code:
+```bash
+git clone https://github.com/kingkenche/MLOps-Shivam_Madhav_Kenche-M25CSA028.git
+cd MLOps-Shivam_Madhav_Kenche-M25CSA028
+git checkout assignment-3
+```
 
 ## How to Run
 
