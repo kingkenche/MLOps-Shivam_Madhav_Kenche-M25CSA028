@@ -52,9 +52,37 @@ This single command will:
 ## 🐳 Docker Deployment
 
 ### Prerequisites
-- Docker installed and running
-- NVIDIA Docker (for GPU support)
+- Docker Desktop installed and running
+- NVIDIA Docker (for GPU support - optional)
 - Windows: Docker Desktop with WSL2
+
+### For Pre-trained Models (Colab Training) 🎯
+
+**If you've already trained the model on Google Colab:**
+
+**Quick Evaluation (Windows):**
+```cmd
+# Simple one-click evaluation
+evaluate_docker.bat
+```
+
+**Manual Evaluation:**
+```cmd
+# Windows
+docker-run.bat evaluate
+
+# Linux/macOS
+./docker-run.sh evaluate
+
+# Docker Compose
+docker-compose --profile evaluation up stl10-evaluate
+```
+
+This will:
+✅ Load your pre-trained model from `models/best_model.pth`  
+✅ Generate comprehensive evaluation results  
+✅ Create new visualizations (confusion matrix, class accuracy, sample predictions)  
+✅ Save evaluation summary in `results/EVALUATION_SUMMARY.md`
 
 ### Quick Docker Start
 
@@ -74,17 +102,21 @@ docker-run.bat run
 |---------|-------------|
 | `build` | Build the Docker image |
 | `run` | Run training pipeline (default) |
+| `evaluate` | **Evaluate pre-trained model** ⭐ |
 | `jupyter` | Start Jupyter notebook server |
 | `shell` | Open interactive shell in container |
 | `gpu-test` | Test GPU availability |
 | `stop` | Stop all running containers |
 | `logs` | Show container logs |
 
-### Docker-Compose (Recommended)
+### Docker-Compose Options
 
 ```bash
 # Run training
 docker-compose up stl10-classifier
+
+# Evaluate pre-trained model  
+docker-compose --profile evaluation up stl10-evaluate
 
 # Run with Jupyter (optional) 
 docker-compose --profile jupyter up jupyter
@@ -95,6 +127,15 @@ docker-compose logs -f stl10-classifier
 ```
 
 ### Manual Docker Commands
+
+**Evaluate pre-trained model (GPU):**
+```bash
+docker run -it --rm --runtime=nvidia \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -v "$(pwd)/models:/app/models" \
+  -v "$(pwd)/results:/app/results" \
+  stl10-classifier python evaluate_pretrained.py
+```
 
 **Build image:**
 ```bash
@@ -154,6 +195,7 @@ Environment variables you can override:
 ### Docker Features
 
 ✅ **GPU Support**: Automatic NVIDIA Docker detection  
+✅ **Pre-trained Model Support**: Evaluate Colab-trained models  
 ✅ **Volume Persistence**: Models and results saved to host  
 ✅ **Cache Optimization**: HuggingFace and PyTorch caches mounted  
 ✅ **Memory Efficiency**: Optimized for containerized environments  

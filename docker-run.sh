@@ -79,6 +79,33 @@ run_training() {
         $IMAGE_NAME
 }
 
+run_evaluation() {
+    print_info "Evaluating pre-trained STL-10 model..."
+    print_info "Using existing model from Colab training"
+    
+    # Check if NVIDIA runtime is available
+    if check_nvidia_docker; then
+        RUNTIME_FLAG="--runtime=nvidia"
+        GPU_ENV="-e NVIDIA_VISIBLE_DEVICES=all"
+    else
+        RUNTIME_FLAG=""
+        GPU_ENV=""
+    fi
+    
+    docker run -it --rm \
+        $RUNTIME_FLAG \
+        $GPU_ENV \
+        -e WANDB_API_KEY="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" \
+        -v "$(pwd)/models:/app/models" \
+        -v "$(pwd)/results:/app/results" \
+        -v "$(pwd)/wandb:/app/wandb" \
+        -v "$HOME/.cache/huggingface:/home/appuser/.cache/huggingface" \
+        -v "$HOME/.cache/torch:/home/appuser/.cache/torch" \
+        --name "${CONTAINER_NAME}-eval" \
+        $IMAGE_NAME \
+        python evaluate_pretrained.py
+}
+
 run_jupyter() {
     print_info "Starting Jupyter notebook server..."
     
@@ -174,6 +201,7 @@ show_usage() {
     echo "Commands:"
     echo "  build      Build the Docker image"
     echo "  run        Run training (default)"
+    echo "  evaluate   Evaluate pre-trained model from Colab"
     echo "  jupyter    Start Jupyter notebook server"
     echo "  shell      Open interactive shell"
     echo "  stop       Stop all running containers"
@@ -197,6 +225,10 @@ case "${1:-run}" in
     run)
         build_image
         run_training
+        ;;
+    evaluate)
+        build_image
+        run_evaluation
         ;;
     jupyter)
         build_image

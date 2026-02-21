@@ -44,6 +44,7 @@ if "%COMMAND%"=="" set COMMAND=run
 
 if "%COMMAND%"=="build" goto BUILD
 if "%COMMAND%"=="run" goto RUN
+if "%COMMAND%"=="evaluate" goto EVALUATE
 if "%COMMAND%"=="jupyter" goto JUPYTER
 if "%COMMAND%"=="shell" goto SHELL
 if "%COMMAND%"=="stop" goto STOP
@@ -80,6 +81,24 @@ docker run -it --rm ^
     -v "%USERPROFILE%\.cache\torch:/home/appuser/.cache/torch" ^
     --name %CONTAINER_NAME% ^
     %IMAGE_NAME%
+goto END
+
+:EVALUATE
+call :BUILD
+echo [94mℹ️  Evaluating pre-trained STL-10 model...[0m
+echo [94mℹ️  Using existing model from Colab training[0m
+docker run -it --rm ^
+    %RUNTIME_FLAG% ^
+    %GPU_ENV% ^
+    -e WANDB_API_KEY=%WANDB_KEY% ^
+    -v "%cd%\models:/app/models" ^
+    -v "%cd%\results:/app/results" ^
+    -v "%cd%\wandb:/app/wandb" ^
+    -v "%USERPROFILE%\.cache\huggingface:/home/appuser/.cache/huggingface" ^
+    -v "%USERPROFILE%\.cache\torch:/home/appuser/.cache/torch" ^
+    --name %CONTAINER_NAME%-eval ^
+    %IMAGE_NAME% ^
+    python evaluate_pretrained.py
 goto END
 
 :JUPYTER
@@ -142,6 +161,7 @@ echo.
 echo Commands:
 echo   build      Build the Docker image
 echo   run        Run training (default)
+echo   evaluate   Evaluate pre-trained model from Colab
 echo   jupyter    Start Jupyter notebook server
 echo   shell      Open interactive shell  
 echo   stop       Stop all running containers

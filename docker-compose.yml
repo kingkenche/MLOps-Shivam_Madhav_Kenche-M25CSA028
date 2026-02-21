@@ -25,6 +25,30 @@ services:
     restart: unless-stopped
     command: ["python", "run_experiment.py"]
 
+  # Evaluate pre-trained model
+  stl10-evaluate:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stl10-evaluation
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - WANDB_API_KEY=${WANDB_API_KEY:-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}
+      - CUDA_VISIBLE_DEVICES=0
+    volumes:
+      # Mount existing models and results
+      - ./models:/app/models
+      - ./results:/app/results
+      - ./wandb:/app/wandb
+      - ~/.cache/huggingface:/home/appuser/.cache/huggingface
+      - ~/.cache/torch:/home/appuser/.cache/torch
+    networks:
+      - ml-network
+    command: ["python", "evaluate_pretrained.py"]
+    profiles:
+      - evaluation
+
   # Optional: Jupyter notebook service for interactive development
   jupyter:
     build:
