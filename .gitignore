@@ -6,5 +6,9 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 
+# Build artifacts (generated at runtime)
+confusion_matrix.png
+gen_notebook.py
+
 # Keep results folder tracked
 !results/
