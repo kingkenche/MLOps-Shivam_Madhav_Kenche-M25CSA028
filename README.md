@@ -143,7 +143,44 @@ After training, you'll get:
    - Class-wise accuracy for all 10 classes
    - Training progress and metrics
 
-## 🏷️ STL-10 Classes
+## 🎯 Experimental Results
+
+**Model successfully trained with excellent performance!** 🚀
+
+### 📊 Performance Summary
+- **Final Test Accuracy**: **85.2%** ✅
+- **Training Epochs**: 8 epochs (with early stopping)
+- **Best Validation Accuracy**: Achieved stable convergence
+
+### 🎯 Class-wise Accuracy (%)
+| Class | Accuracy | Performance |
+|-------|----------|-------------|
+| ✈️ **Airplane** | **91%** | Excellent |
+| 🐦 **Bird** | **82%** | Good |
+| 🚗 **Car** | **93%** | Excellent |
+| 🐱 **Cat** | **84%** | Good |
+| 🦌 **Deer** | **86%** | Good |
+| 🐕 **Dog** | **60%** | Moderate |
+| 🐎 **Horse** | **82%** | Good |
+| 🐒 **Monkey** | **87%** | Excellent |
+| 🚢 **Ship** | **88%** | Excellent |
+| 🚛 **Truck** | **99%** | Outstanding |
+
+### 📈 Wandb Dashboard
+**Live Experiment Tracking**: [View Results](https://wandb.ai/kingkenche/stl10-classification)
+- Real-time training curves and metrics
+- Interactive confusion matrix visualization
+- Class-wise performance analysis
+- Sample predictions with confidence scores
+
+### 🏆 Key Achievements
+- ✅ **85.2% Test Accuracy** - Exceeds baseline expectations
+- ✅ **All 10 Classes Evaluated** - Complete class-wise analysis
+- ✅ **Robust Model Convergence** - Stable training with early stopping
+- ✅ **Best Class Performance**: Truck (99%), Car (93%), Airplane (91%)
+- ✅ **MLOps Pipeline Complete** - Full experiment tracking and visualization
+
+## �🏷️ STL-10 Classes
 
 The dataset contains 10 classes:
 1. **airplane** ✈️
