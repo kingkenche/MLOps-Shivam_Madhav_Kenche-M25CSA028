@@ -1,0 +1,10 @@
+# Ignore large binary / data files
+data/
+*.pth
+*.zip
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Keep results folder tracked
+!results/
