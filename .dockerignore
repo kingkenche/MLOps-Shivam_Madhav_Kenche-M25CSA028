@@ -1,0 +1,90 @@
+# Git
+.git
+.gitignore
+*.md
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+build
+develop-eggs
+dist
+downloads
+eggs
+.eggs
+lib
+lib64
+parts
+sdist
+var
+wheels
+*.egg-info
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large model files (will be downloaded)
+models/*.pth
+models/*.pt
+*.pth
+*.pt
+
+# Results (will be generated)
+results/*.png
+results/*.jpg
+results/*.jpeg
+
+# Wandb logs (will be generated)
+wandb/
+
+# Data files
+data/
+*.zip
+data-*.zip
+
+# Jupyter
+.ipynb_checkpoints
+
+# Cache
+.cache/
+.pytest_cache/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Documentation
+README*.md
+INSTRUCTIONS*.txt
+*_INSTRUCTIONS.txt
+
+# Colab specific files
+*Colab*
+colab_*
+COLAB_*

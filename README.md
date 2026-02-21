@@ -48,6 +48,118 @@ This single command will:
 - Log everything to Wandb
 - Generate all visualizations
 - Create exam answers
+
+## 🐳 Docker Deployment
+
+### Prerequisites
+- Docker installed and running
+- NVIDIA Docker (for GPU support)
+- Windows: Docker Desktop with WSL2
+
+### Quick Docker Start
+
+**Linux/macOS:**
+```bash
+./docker-run.sh run
+```
+
+**Windows:**
+```cmd
+docker-run.bat run
+```
+
+### Available Docker Commands
+
+| Command | Description |
+|---------|-------------|
+| `build` | Build the Docker image |
+| `run` | Run training pipeline (default) |
+| `jupyter` | Start Jupyter notebook server |
+| `shell` | Open interactive shell in container |
+| `gpu-test` | Test GPU availability |
+| `stop` | Stop all running containers |
+| `logs` | Show container logs |
+
+### Docker-Compose (Recommended)
+
+```bash
+# Run training
+docker-compose up stl10-classifier
+
+# Run with Jupyter (optional) 
+docker-compose --profile jupyter up jupyter
+
+# Background training
+docker-compose up -d stl10-classifier
+docker-compose logs -f stl10-classifier
+```
+
+### Manual Docker Commands
+
+**Build image:**
+```bash
+docker build -t stl10-classifier .
+```
+
+**Run training (GPU):**
+```bash
+docker run -it --rm --runtime=nvidia \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -e WANDB_API_KEY="your_wandb_key" \
+  -v "$(pwd)/models:/app/models" \
+  -v "$(pwd)/results:/app/results" \
+  -v "$(pwd)/wandb:/app/wandb" \
+  stl10-classifier
+```
+
+**Run training (CPU):**
+```bash
+docker run -it --rm \
+  -e WANDB_API_KEY="your_wandb_key" \
+  -v "$(pwd)/models:/app/models" \
+  -v "$(pwd)/results:/app/results" \
+  -v "$(pwd)/wandb:/app/wandb" \
+  stl10-classifier
+```
+
+**Start Jupyter:**
+```bash
+docker run -it --rm -p 8888:8888 \
+  --runtime=nvidia \
+  -e NVIDIA_VISIBLE_DEVICES=all \
+  -v "$(pwd):/app" \
+  stl10-classifier \
+  jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root
+```
+
+### Docker Configuration
+
+Environment variables you can override:
+
+```bash
+# Training parameters
+-e BATCH_SIZE=16
+-e NUM_EPOCHS=15
+-e LEARNING_RATE=0.001
+-e NUM_WORKERS=2
+
+# Wandb configuration
+-e WANDB_PROJECT="stl10-docker"
+-e WANDB_API_KEY="your_key"
+
+# GPU configuration
+-e CUDA_VISIBLE_DEVICES=0
+```
+
+### Docker Features
+
+✅ **GPU Support**: Automatic NVIDIA Docker detection  
+✅ **Volume Persistence**: Models and results saved to host  
+✅ **Cache Optimization**: HuggingFace and PyTorch caches mounted  
+✅ **Memory Efficiency**: Optimized for containerized environments  
+✅ **Health Checks**: Built-in container health monitoring  
+✅ **Multi-Platform**: Linux, macOS, Windows support  
+✅ **Development Mode**: Jupyter notebook integration
 - Prepare model for HuggingFace upload
 
 ## 📊 Features Implemented
