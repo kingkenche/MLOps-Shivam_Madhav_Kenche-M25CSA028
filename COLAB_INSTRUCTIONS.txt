@@ -1,0 +1,97 @@
+# Google Colab Instructions - STL-10 Classification
+
+## 📦 Quick Setup (2 minutes!)
+
+### Step 1: Upload to Google Colab
+1. Go to [Google Colab](https://colab.research.google.com/)
+2. Click "Upload" and upload `STL10_Classification_Colab.ipynb`
+3. **IMPORTANT**: Set Runtime to GPU
+   - Runtime → Change runtime type → Hardware accelerator: **GPU**
+   - Click Save
+
+### Step 2: Run Everything!
+1. Click "Runtime" → "Run all" (or Ctrl+F9)
+2. Wait for completion (~15-20 minutes on T4 GPU)
+3. Download results at the end
+
+## ✅ What You'll Get Automatically
+
+- **Question 10 Answer**: Test Accuracy
+- **Question 11 Answers**: Class-wise accuracy for all 10 classes
+- Wandb dashboard with all visualizations
+- Confusion matrix and accuracy plots
+- Sample predictions (10 correct + 10 incorrect)
+- Downloadable model and results
+
+## 📊 Expected Results
+
+The notebook will automatically output:
+```
+🎯 FINAL EXAM ANSWERS
+============================================================
+
+📊 Question 10 - Test Accuracy: X.XXXX
+
+📋 Question 11 - Class-wise Accuracy:
+----------------------------------------
+ 1. airplane : X.XXXX
+ 2. bird     : X.XXXX
+ 3. car      : X.XXXX
+ 4. cat      : X.XXXX
+ 5. deer     : X.XXXX
+ 6. dog      : X.XXXX
+ 7. horse    : X.XXXX
+ 8. monkey   : X.XXXX
+ 9. ship     : X.XXXX
+10. truck    : X.XXXX
+```
+
+## ⏱️ Timeline
+
+- **0-2 min**: Setup and package installation
+- **2-5 min**: Data loading from HuggingFace
+- **5-20 min**: Model training (depends on GPU)
+- **20-22 min**: Evaluation and visualization
+- **22-25 min**: Results generation and download
+
+## 🎯 Success Indicators
+
+✅ GPU detected (T4/P100/V100)  
+✅ Dataset loaded successfully  
+✅ Training accuracy increasing  
+✅ Wandb dashboard operational  
+✅ Test accuracy > 70%  
+✅ All 10 classes evaluated  
+✅ Results downloadable  
+
+## 🚨 Common Issues & Solutions
+
+**Issue**: "GPU not available"  
+**Solution**: Runtime → Change runtime type → GPU
+
+**Issue**: "Package installation failed"  
+**Solution**: Runtime → Restart runtime, then run again
+
+**Issue**: "Dataset loading slow"  
+**Solution**: Normal, takes 2-3 minutes
+
+**Issue**: "Wandb login required"  
+**Solution**: API key is pre-configured, just continue
+
+## 📋 Files in Package
+
+- `STL10_Classification_Colab.ipynb` - **Main notebook (run this!)**
+- `README_COLAB.md` - Detailed guide
+- `colab_config.py` - Configuration (optional)
+- `colab_requirements.txt` - Dependencies list
+- `COLAB_INSTRUCTIONS.txt` - This file
+
+## 🎉 That's It!
+
+Just upload the `.ipynb` file to Colab, set GPU runtime, and run all cells!
+
+Your exam answers will appear automatically at the end.
+
+---
+**Author**: Shivam Madhav Kenche (M25CSA028)  
+**Project**: STL-10 Image Classification with MLOps
