@@ -1,10 +1,6 @@
-# Checkpoint and model files (will be pushed to Hugging Face instead)
-*.pth
-*.pt
-checkpoint*.pt
-
 # Temporary files
-*.pkl
+# Note: .pth and .pt files are included in assignment-4 branch for model checkpoints
+# *.pkl files excluded to save space
 __pycache__/
 .DS_Store
 .ipynb_checkpoints/
