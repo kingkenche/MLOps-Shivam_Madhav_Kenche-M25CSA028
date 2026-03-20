@@ -1,0 +1,11 @@
+# Checkpoint and model files (will be pushed to Hugging Face instead)
+*.pth
+*.pt
+checkpoint*.pt
+
+# Temporary files
+*.pkl
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+*.pyc
