@@ -1,0 +1,8 @@
+{
+  "best_val_acc": 89.96,
+  "best_params": {
+    "rank": 11,
+    "alpha": 9,
+    "dropout": 0.05558725294779761
+  }
+}
