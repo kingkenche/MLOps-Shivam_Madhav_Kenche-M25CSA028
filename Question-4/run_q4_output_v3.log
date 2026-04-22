@@ -1,0 +1,25 @@
+/home/m25csa028/miniconda3/lib/python3.13/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+============================================================
+Q4: ECAPA-TDNN Optimization Pipeline
+============================================================
+Loading model...
+Baseline GFLOPs: 11.3189
+--- Evaluating Baseline ---
+    Baseline Accuracy: 100.00%
+Applying PTQ (nn.Linear only)...
+--- Evaluating PTQ ---
+    PTQ Accuracy: 100.00%
+
+Running Optuna QAT trials...
+
+============================================================
+FINAL RESULTS
+============================================================
+Baseline Accuracy: 100.0%
+Baseline GFLOPs: 11.3189
+PTQ GFLOPs: 11.3189
+PTQ Accuracy: 100.0%
+Final Recovered Accuracy: 100.0%
+Theoretical GFLOPs Saved: 8.4892 (INT8 4x efficiency)
+============================================================

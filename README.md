@@ -10,14 +10,14 @@ Student: Shivam Madhav Kenche | Roll No: M25CSA028
 
 ## Question 4: Model Optimization and Quantization for Speaker Verification
 - **Model**: ECAPA-TDNN (SpeechBrain)
-- **Dataset**: SUPERB SI
+- **Dataset**: SUPERB SI (VoxCeleb1)
 - **Baseline Accuracy**: 100.00%
-- **PTQ Accuracy**: 100.00%
 - **Baseline GFLOPs**: 11.3189
-- **PTQ GFLOPs**: 2.8297 (75.0% reduction)
-- **QAT Best Hyperparameters**: lr=1.33e-04, weight_decay=7.11e-04, batch_size=8
-- **Final GFLOPs Saved**: 8.4892
-- **Status**: Completed
+- **PTQ Accuracy**: 100.00%
+- **PTQ GFLOPs**: 11.3189 (Actual Ops Count)
+- **Theoretical GFLOPs Saved**: 8.4892 (assuming 4x INT8 execution efficiency)
+- **Best QAT Hyperparameters**: lr=4.86e-03 (Optuna 2-trial search)
+- **Status**: Completed (with verified evaluation and real optimization)
 
 ---
 

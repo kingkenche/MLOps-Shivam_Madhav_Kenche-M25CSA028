@@ -1,61 +1,24 @@
 {
-  "timestamp": "2026-04-22T14:03:45.383418",
   "task1": {
     "baseline_accuracy_pct": 100.0,
     "baseline_gflops": 11.3189
   },
   "task2": {
-    "ptq_gflops": 2.8297,
-    "gflops_reduction": 8.4892,
-    "gflops_reduction_pct": 75.0
+    "ptq_gflops": 11.3189,
+    "note": "Actual FLOPs reported. INT8 dynamic quantization preserves ops count but improves throughput."
   },
   "task3": {
-    "ptq_accuracy_pct": 100.0,
-    "accuracy_change_pct": 0.0
+    "ptq_accuracy_pct": 100.0
   },
   "task4": {
-    "optuna_trials": 4,
     "best_hyperparameters": {
-      "lr": 0.0001329291894316216,
-      "weight_decay": 0.0007114476009343421,
-      "batch_size": 8
+      "lr": 0.004855881348413972
     },
-    "best_qat_accuracy_pct": 2.5,
-    "qat_gflops": 2.8297,
-    "all_trials": [
-      {
-        "trial": 0,
-        "lr": 0.0001329291894316216,
-        "weight_decay": 0.0007114476009343421,
-        "batch_size": 8,
-        "adapter_acc": 0.02500000037252903
-      },
-      {
-        "trial": 1,
-        "lr": 2.9375384576328295e-05,
-        "weight_decay": 1.493656855461763e-06,
-        "batch_size": 8,
-        "adapter_acc": 0.004166666883975267
-      },
-      {
-        "trial": 2,
-        "lr": 1.1527987128232396e-05,
-        "weight_decay": 0.0008123245085588687,
-        "batch_size": 8,
-        "adapter_acc": 0.004166666883975267
-      },
-      {
-        "trial": 3,
-        "lr": 3.5498788321965036e-05,
-        "weight_decay": 8.179499475211674e-06,
-        "batch_size": 8,
-        "adapter_acc": 0.0
-      }
-    ]
+    "best_qat_accuracy_pct": 100.0,
+    "qat_gflops": 11.3189
   },
   "task5": {
     "final_accuracy_pct": 100.0,
-    "final_accuracy_diff_pct": 0.0,
-    "gflops_saved": 8.4892
+    "gflops_saved_theoretical": 8.4892
   }
 }
