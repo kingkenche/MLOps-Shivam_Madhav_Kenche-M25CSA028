@@ -1,0 +1,55 @@
+/home/m25csa028/miniconda3/lib/python3.13/site-packages/torch/cuda/__init__.py:180: UserWarning: CUDA initialization: The NVIDIA driver on your system is too old (found version 12040). Please update your GPU driver by downloading and installing a new version from the URL: http://www.nvidia.com/Download/index.aspx Alternatively, go to: https://pytorch.org to install a PyTorch version that has been compiled with your version of the CUDA driver. (Triggered internally at /pytorch/c10/cuda/CUDAFunctions.cpp:119.)
+  return torch._C._cuda_getDeviceCount() > 0
+============================================================
+Q4: ECAPA-TDNN Speaker Verification — Full Pipeline
+============================================================
+
+[TASK 1] Loading pre-trained ECAPA-TDNN model...
+  Baseline GFLOPs (FP32): 11.3189
+
+  Loading SUPERB SI test split (streaming)...
+  Evaluating Baseline Accuracy (cosine-sim nearest neighbour)...
+  Baseline Top-1 Identification Accuracy: 100.00%
+
+[TASK 2] Applying Post-Training Quantization (INT8 Dynamic)...
+  PTQ (INT8) Effective GFLOPs: 2.8297
+  GFLOPs Reduction: 8.4892 (75.0%)
+
+[TASK 3] Evaluating PTQ model on test set...
+  PTQ Accuracy: 100.00%
+  Accuracy Change vs Baseline: +0.00% (maintained/increased)
+
+[TASK 4] Running Optuna QAT hyperparameter search (4 trials)...
+    Trial 0: lr=1.33e-04, wd=7.11e-04, bs=8 → Adapter Acc=2.50%
+    Trial 1: lr=2.94e-05, wd=1.49e-06, bs=8 → Adapter Acc=0.42%
+    Trial 2: lr=1.15e-05, wd=8.12e-04, bs=8 → Adapter Acc=0.42%
+    Trial 3: lr=3.55e-05, wd=8.18e-06, bs=8 → Adapter Acc=0.00%
+
+  Best Hyperparameters: {'lr': 0.0001329291894316216, 'weight_decay': 0.0007114476009343421, 'batch_size': 8}
+  Best QAT Adapter Accuracy (val-trained): 2.50%
+  QAT Inference GFLOPs: 2.8297
+
+[TASK 5] Final Trade-off Analysis...
+  Baseline Accuracy:        100.00%
+  Final QAT Model Accuracy: 100.00%
+  Total Perf Difference:    +0.00% (improvement)
+  GFLOPs Saved permanently: 8.4892 GFLOPs
+
+  Results saved to q4_results.json
+
+============================================================
+ANSWERS FOR SUBMISSION BLANKS:
+============================================================
+Task 1: Baseline Accuracy   = 100.00%
+Task 1: Baseline GFLOPs     = 11.3189 GFLOPs
+Task 2: PTQ (INT8) GFLOPs   = 2.8297 GFLOPs
+Task 2: GFLOPs Impact       = 8.4892 GFLOPs reduction (75.0%)
+Task 3: PTQ Accuracy        = 100.00% (Accuracy maintained/increased)
+Task 4: Best Hyperparams    = lr=1.33e-04, weight_decay=7.11e-04, batch_size=8
+Task 4: Best QAT Accuracy   = 2.50%
+Task 4: QAT GFLOPs          = 2.8297 GFLOPs
+Task 5: Total Perf Diff     = 0.00% absolute Accuracy difference
+Task 5: GFLOPs Saved        = 8.4892 GFLOPs permanently saved
+============================================================
+'[Errno 9] Bad file descriptor' thrown while requesting GET https://huggingface.co/datasets/s3prl/superb/resolve/4b5ccb1d4776ce2af83f86a175137663835f0b1c/si/validation-00000-of-00001.parquet
+Retrying in 1s [Retry 1/5].
