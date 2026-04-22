@@ -12,7 +12,7 @@
   },
   "task4": {
     "best_hyperparameters": {
-      "lr": 0.004855881348413972
+      "lr": 0.0010041952273156596
     },
     "best_qat_accuracy_pct": 100.0,
     "qat_gflops": 11.3189
